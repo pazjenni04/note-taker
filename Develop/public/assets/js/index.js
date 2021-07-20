@@ -11,6 +11,10 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+//middleware - sets the express app to handle data parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 if (window.location.pathname === "/notes") {
   noteTitle = document.querySelector(".note-title");
   noteText = document.querySelector(".note-textarea");
@@ -32,7 +36,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () =>
+const getNotes = (req, res) =>
   fetch("/api/notes", {
     method: "GET",
     headers: {
@@ -56,6 +60,11 @@ const deleteNote = (id) =>
       "Content-Type": "application/json",
     },
   });
+
+//server call for notes
+app.get("/notes", (req, res) =>
+  res.sendFile(path.join(__dirname, "notes.html"))
+);
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -188,3 +197,16 @@ if (window.location.pathname === "/notes") {
 }
 
 getAndRenderNotes();
+
+//posts
+app.post("api/notes", (req, res) => {
+  const newNote = req.body;
+});
+
+//starts server to begin listening
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+
+//button for the get started page -- should redirect to the notes.html
+document.getElementById("start").addEventListener("click", function () {
+  window.location.href = "/notes";
+});
