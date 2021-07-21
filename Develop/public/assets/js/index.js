@@ -1,19 +1,8 @@
-const express = require("express"); //express package
-const path = require("path"); //path package -- allows you to pave the path to join file/directory
-const fs = require("fs");
-
-const app = express();
-const PORT = 8000;
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-
-//middleware - sets the express app to handle data parsing
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 if (window.location.pathname === "/notes") {
   noteTitle = document.querySelector(".note-title");
@@ -60,11 +49,6 @@ const deleteNote = (id) =>
       "Content-Type": "application/json",
     },
   });
-
-//server call for notes
-app.get("/notes", (req, res) =>
-  res.sendFile(path.join(__dirname, "notes.html"))
-);
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -197,14 +181,6 @@ if (window.location.pathname === "/notes") {
 }
 
 getAndRenderNotes();
-
-//posts
-app.post("api/notes", (req, res) => {
-  const newNote = req.body;
-});
-
-//starts server to begin listening
-app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 
 //button for the get started page -- should redirect to the notes.html
 document.getElementById("start").addEventListener("click", function () {
