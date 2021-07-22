@@ -66,6 +66,7 @@ const renderActiveNote = () => {
   }
 };
 
+//saves note and should render list
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -108,6 +109,7 @@ const handleNewNoteView = (e) => {
   renderActiveNote();
 };
 
+//shows the save button icon when start typing title/text
 const handleRenderSaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
     hide(saveNoteBtn);
@@ -123,6 +125,7 @@ const renderNoteList = async (notes) => {
     noteList.forEach((el) => (el.innerHTML = ""));
   }
 
+  //array of notes pushing to when saving
   let noteListItems = [];
 
   // Returns HTML element with or without a delete button
