@@ -57,8 +57,8 @@ _Questions? Feel free to contact me._
 
 # Links
 
-github link - https://github.com/pazjenni04/note-taker.git
-Heroku deployed link - https://pencil-that-in-note-generator.herokuapp.com/
+- Github link - https://github.com/pazjenni04/note-taker.git
+- Heroku deployed link - https://pencil-that-in-note-generator.herokuapp.com/
 
 # License
 
