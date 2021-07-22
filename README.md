@@ -25,11 +25,11 @@ Once the user has landed on the homepage, the user can proceed by clicking on "G
 
 After the user is redirected to the notes page, they can proceed with adding any important notes that they are needing to save. By entering a title and adding text to the text area, a save icon will appear on the top right-hand corner of the webpage. By clicking on the save icon, the user can then save the current note they were inputting.
 
-![The following image is an example of a user entering a note and the save icon](public\images\save-icon_img.PNG)
+![The following image is an example of a user entering a note and the save icon](https://raw.githubusercontent.com/pazjenni04/note-taker/main/public/images/save-icon_img.PNG)
 
 If the user refreshes the page, the note will then appear on the left-hand column of the page to the saved notes area and the text area to input a note will clear.
 
-![The following image shows the column where the note is saved](https://raw.githubusercontent.com/pazjenni04/note-taker/main/public/images/save-icon_img.PNG)
+![The following image shows the column where the note is saved](https://raw.githubusercontent.com/pazjenni04/note-taker/main/public/images/saved-note_img.PNG)
 
 If the user needs to pull up a previous note, they can always click on the title of the note they are attempting to retrieve and the note will appear on the right-hand column.
 
